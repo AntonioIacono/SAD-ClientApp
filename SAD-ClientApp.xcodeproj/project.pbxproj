@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F70F58CB28B0DE0B0059BB90 /* SAD_ClientAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58CA28B0DE0B0059BB90 /* SAD_ClientAppApp.swift */; };
-		F70F58CD28B0DE0B0059BB90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58CC28B0DE0B0059BB90 /* ContentView.swift */; };
+		F70F58CB28B0DE0B0059BB90 /* SADClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58CA28B0DE0B0059BB90 /* SADClientApp.swift */; };
 		F70F58CF28B0DE0C0059BB90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70F58CE28B0DE0C0059BB90 /* Assets.xcassets */; };
 		F70F58D228B0DE0C0059BB90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70F58D128B0DE0C0059BB90 /* Preview Assets.xcassets */; };
+		F70F58DD28B0DEA60059BB90 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58DC28B0DEA60059BB90 /* Ingredient.swift */; };
+		F70F58DF28B0DEB70059BB90 /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58DE28B0DEB70059BB90 /* IngredientListView.swift */; };
+		F70F58E128B0DECB0059BB90 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E028B0DECB0059BB90 /* IngredientListViewModel.swift */; };
+		F70F58E328B0DEF50059BB90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E228B0DEF50059BB90 /* Constants.swift */; };
+		F70F58E528B0DF0A0059BB90 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E428B0DF0A0059BB90 /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F70F58C728B0DE0B0059BB90 /* SAD-ClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SAD-ClientApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70F58CA28B0DE0B0059BB90 /* SAD_ClientAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAD_ClientAppApp.swift; sourceTree = "<group>"; };
-		F70F58CC28B0DE0B0059BB90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F70F58CA28B0DE0B0059BB90 /* SADClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SADClientApp.swift; sourceTree = "<group>"; };
 		F70F58CE28B0DE0C0059BB90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70F58D128B0DE0C0059BB90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F70F58DC28B0DEA60059BB90 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		F70F58DE28B0DEB70059BB90 /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
+		F70F58E028B0DECB0059BB90 /* IngredientListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewModel.swift; sourceTree = "<group>"; };
+		F70F58E228B0DEF50059BB90 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F70F58E428B0DF0A0059BB90 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,11 @@
 		F70F58C928B0DE0B0059BB90 /* SAD-ClientApp */ = {
 			isa = PBXGroup;
 			children = (
-				F70F58CA28B0DE0B0059BB90 /* SAD_ClientAppApp.swift */,
-				F70F58CC28B0DE0B0059BB90 /* ContentView.swift */,
+				F70F58DB28B0DE950059BB90 /* Models */,
+				F70F58DA28B0DE8D0059BB90 /* Views */,
+				F70F58D928B0DE820059BB90 /* View Models */,
+				F70F58D828B0DE7B0059BB90 /* Utilities */,
+				F70F58CA28B0DE0B0059BB90 /* SADClientApp.swift */,
 				F70F58CE28B0DE0C0059BB90 /* Assets.xcassets */,
 				F70F58D028B0DE0C0059BB90 /* Preview Content */,
 			);
@@ -65,6 +76,39 @@
 				F70F58D128B0DE0C0059BB90 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F70F58D828B0DE7B0059BB90 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F70F58E228B0DEF50059BB90 /* Constants.swift */,
+				F70F58E428B0DF0A0059BB90 /* HttpClient.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F70F58D928B0DE820059BB90 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F70F58E028B0DECB0059BB90 /* IngredientListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		F70F58DA28B0DE8D0059BB90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F70F58DE28B0DEB70059BB90 /* IngredientListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F70F58DB28B0DE950059BB90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F70F58DC28B0DEA60059BB90 /* Ingredient.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70F58CD28B0DE0B0059BB90 /* ContentView.swift in Sources */,
-				F70F58CB28B0DE0B0059BB90 /* SAD_ClientAppApp.swift in Sources */,
+				F70F58E128B0DECB0059BB90 /* IngredientListViewModel.swift in Sources */,
+				F70F58CB28B0DE0B0059BB90 /* SADClientApp.swift in Sources */,
+				F70F58DD28B0DEA60059BB90 /* Ingredient.swift in Sources */,
+				F70F58E528B0DF0A0059BB90 /* HttpClient.swift in Sources */,
+				F70F58DF28B0DEB70059BB90 /* IngredientListView.swift in Sources */,
+				F70F58E328B0DEF50059BB90 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct SAD_ClientAppApp: App {
+struct SADClientApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IngredientList()
         }
     }
 }
