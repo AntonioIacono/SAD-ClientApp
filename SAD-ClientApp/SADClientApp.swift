@@ -11,7 +11,8 @@ import SwiftUI
 struct SADClientApp: App {
     var body: some Scene {
         WindowGroup {
-            IngredientList()
+//            IngredientList()
+            DrinkListView()
         }
     }
 }

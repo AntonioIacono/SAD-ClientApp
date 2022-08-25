@@ -11,8 +11,7 @@ import SwiftUI
 struct IngredientList: View {
     
     @StateObject var viewModel = IngredientListViewModel()
-    
-    
+    @State var modal: ModalType? = nil
     var body: some View {
         NavigationView {
             List {
@@ -28,6 +27,13 @@ struct IngredientList: View {
                 }
             }
             .navigationTitle(Text("Ingredients"))
+            .toolbar{
+                Button{
+            print("add ingredient")
+                } label: {
+                Label("Add ingredient", systemImage: "plus.circle"  )
+                }
+            }
             
         }.onAppear {
             Task {
@@ -42,7 +48,7 @@ struct IngredientList: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct IngredientList_Previews: PreviewProvider {
     static var previews: some View {
         IngredientList()
     }
