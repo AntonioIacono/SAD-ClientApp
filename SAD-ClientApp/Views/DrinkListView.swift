@@ -14,25 +14,34 @@ struct DrinkListView: View {
     @State var modal: ModalType? = nil
     var body: some View {
         NavigationView {
+            VStack{
+                NavigationLink(destination: OrderView(), label: {
+                    Text("Order")
+                        .font(.title3)
+                        .foregroundColor(Color(.label))
+                })
                 List(drinkListViewModel.drinks, id: \.id){ drink in
                     NavigationLink(destination: DrinkDetailView(drink: drink), label: {
-                  
                         HStack{
-                        Text(drink.name)
-                            .font(.title3)
-                            .foregroundColor(Color(.label))
+                            Text(drink.name)
+                                .font(.title3)
+                                .foregroundColor(Color(.label))
+                            Text("\(String(format: "%.2f", drink.price))  $")
                         }
                     })
                 }
-            .navigationTitle(Text("Menu"))
-        }.onAppear {
-            Task {
-                do {
-                    try await drinkListViewModel.fetchDrinks()
-                } catch {
-                    print("Error: \(error)")
+                .navigationTitle(Text("Menu"))
+                
+            }.onAppear {
+                Task {
+                    do {
+                        try await drinkListViewModel.fetchDrinks()
+                    } catch {
+                        print("Error: \(error)")
+                    }
                 }
             }
+            
         }
     }
 }

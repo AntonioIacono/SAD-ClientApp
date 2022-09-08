@@ -8,37 +8,29 @@
 import Foundation
 import SwiftUI
 
-struct IngredientList: View {
+struct IngredientListView: View {
     
-    @StateObject var viewModel = IngredientListViewModel()
+    @StateObject var ingredientViewModel = IngredientListViewModel()
     @State var modal: ModalType? = nil
+    var drink: Drink
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.ingredients) {
+                ForEach(ingredientViewModel.ingredients) {
                     ingredient in
-                    Button {
-                        print("selected")
-                    } label: {
+                  
                         Text(ingredient.name)
                             .font(.title3)
                             .foregroundColor(Color(.label))
-                    }
                 }
-            }
-            .navigationTitle(Text("Ingredients"))
-            .toolbar{
-                Button{
-            print("add ingredient")
-                } label: {
-                Label("Add ingredient", systemImage: "plus.circle"  )
-                }
-            }
+            }.navigationTitle(Text("Ingredients"))
+         
             
         }.onAppear {
             Task {
                 do {
-                    try await viewModel.fetchIngredients()
+                    Endpoints.idDrinks = "\(String(describing: drink.id!))"
+                    try await ingredientViewModel.fetchIngredients(enpointIdDrink: "\(String(describing: drink.id!))")
                 } catch {
                     print("Error: \(error)")
                 }
@@ -48,8 +40,8 @@ struct IngredientList: View {
     }
 }
 
-struct IngredientList_Previews: PreviewProvider {
+struct IngredientListView_Previews: PreviewProvider {
     static var previews: some View {
-        IngredientList()
+        IngredientListView(drink: DrinkListViewModel().drinks.first!)
     }
 }
