@@ -15,7 +15,7 @@
 		F70F58E128B0DECB0059BB90 /* IngredientListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E028B0DECB0059BB90 /* IngredientListViewModel.swift */; };
 		F70F58E328B0DEF50059BB90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E228B0DEF50059BB90 /* Constants.swift */; };
 		F70F58E528B0DF0A0059BB90 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F58E428B0DF0A0059BB90 /* HttpClient.swift */; };
-		F737B57F28C9DEFD00105657 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F737B57E28C9DEFD00105657 /* Order.swift */; };
+		F737B57F28C9DEFD00105657 /* OrderSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F737B57E28C9DEFD00105657 /* OrderSend.swift */; };
 		F7834EDF28B637DD0037114B /* ModalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7834EDE28B637DD0037114B /* ModalType.swift */; };
 		F7834EE128B639A00037114B /* DrinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7834EE028B639A00037114B /* DrinkListViewModel.swift */; };
 		F7834EE328B639C60037114B /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7834EE228B639C60037114B /* Drink.swift */; };
@@ -23,6 +23,8 @@
 		F7834EE928B644850037114B /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7834EE828B644850037114B /* DrinkDetailView.swift */; };
 		F7A2244728C9EB210005E7F4 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A2244628C9EB210005E7F4 /* OrderView.swift */; };
 		F7A2244B28CA268E0005E7F4 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A2244A28CA268E0005E7F4 /* OrderViewModel.swift */; };
+		F7B2385528F0D37A00BDC819 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B2385428F0D37A00BDC819 /* Bill.swift */; };
+		F7B2385728F73ED400BDC819 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B2385628F73ED400BDC819 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,7 @@
 		F70F58E028B0DECB0059BB90 /* IngredientListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListViewModel.swift; sourceTree = "<group>"; };
 		F70F58E228B0DEF50059BB90 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F70F58E428B0DF0A0059BB90 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
-		F737B57E28C9DEFD00105657 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F737B57E28C9DEFD00105657 /* OrderSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSend.swift; sourceTree = "<group>"; };
 		F7834EDE28B637DD0037114B /* ModalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalType.swift; sourceTree = "<group>"; };
 		F7834EE028B639A00037114B /* DrinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewModel.swift; sourceTree = "<group>"; };
 		F7834EE228B639C60037114B /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		F7834EE828B644850037114B /* DrinkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailView.swift; sourceTree = "<group>"; };
 		F7A2244628C9EB210005E7F4 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		F7A2244A28CA268E0005E7F4 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		F7B2385428F0D37A00BDC819 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		F7B2385628F73ED400BDC819 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,9 @@
 			children = (
 				F70F58DC28B0DEA60059BB90 /* Ingredient.swift */,
 				F7834EE228B639C60037114B /* Drink.swift */,
-				F737B57E28C9DEFD00105657 /* Order.swift */,
+				F737B57E28C9DEFD00105657 /* OrderSend.swift */,
+				F7B2385628F73ED400BDC819 /* Order.swift */,
+				F7B2385428F0D37A00BDC819 /* Bill.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7834EE928B644850037114B /* DrinkDetailView.swift in Sources */,
+				F7B2385528F0D37A00BDC819 /* Bill.swift in Sources */,
+				F7B2385728F73ED400BDC819 /* Order.swift in Sources */,
 				F7A2244728C9EB210005E7F4 /* OrderView.swift in Sources */,
 				F70F58E128B0DECB0059BB90 /* IngredientListViewModel.swift in Sources */,
 				F7834EE328B639C60037114B /* Drink.swift in Sources */,
@@ -213,7 +221,7 @@
 				F7A2244B28CA268E0005E7F4 /* OrderViewModel.swift in Sources */,
 				F7834EE528B63A4E0037114B /* DrinkListView.swift in Sources */,
 				F70F58CB28B0DE0B0059BB90 /* SADClientApp.swift in Sources */,
-				F737B57F28C9DEFD00105657 /* Order.swift in Sources */,
+				F737B57F28C9DEFD00105657 /* OrderSend.swift in Sources */,
 				F7834EE128B639A00037114B /* DrinkListViewModel.swift in Sources */,
 				F70F58DD28B0DEA60059BB90 /* Ingredient.swift in Sources */,
 				F70F58E528B0DF0A0059BB90 /* HttpClient.swift in Sources */,

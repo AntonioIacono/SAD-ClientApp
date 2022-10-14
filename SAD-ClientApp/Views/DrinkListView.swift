@@ -11,21 +11,71 @@ import SwiftUI
 struct DrinkListView: View {
     
     @StateObject var drinkListViewModel = DrinkListViewModel()
-    @State var modal: ModalType? = nil
+//    @State var billCreated: Bool = false
+//    @State var orderCreated: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack{
-                NavigationLink(destination: OrderView(), label: {
-                    Text("Order")
-                        .font(.title3)
-                        .foregroundColor(Color(.label))
-                })
+                HStack{
+                    if(!drinkListViewModel.billCreated){
+                    Button {
+                        drinkListViewModel.billCreated=true
+                    } label: {
+                        
+                        Text("New Bill")
+                            .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
+                            .padding(.all)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                            .scaledToFit()
+                        }
+                    }else{
+                        NavigationLink(destination: OrderView(),label:{
+                            
+                                Text("Review Bill")
+                                    .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
+                                    .padding(.all)
+                                    .foregroundColor(.white)
+                                    .background(Color.red)
+                                    .cornerRadius(0)
+                                    .scaledToFit()
+                        })
+                    }
+                    
+                    if(!(drinkListViewModel.orderCreated)){
+                    Button {
+                        drinkListViewModel.createOrder()
+                    } label: {
+                        Text("New Order")
+                            .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
+                            .padding(.all)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                            .scaledToFit()
+                        }
+                    }else{
+                        NavigationLink(destination: OrderView(),label:{
+                               Text("Review Order")
+                                    .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
+                                    .padding(.all)
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(20)
+                                    .scaledToFit()
+                        })
+                    }
+                    
+                }
                 List(drinkListViewModel.drinks, id: \.id){ drink in
                     NavigationLink(destination: DrinkDetailView(drink: drink), label: {
                         HStack{
                             Text(drink.name)
                                 .font(.title3)
                                 .foregroundColor(Color(.label))
+                            
                             Text("\(String(format: "%.2f", drink.price))  $")
                         }
                     })

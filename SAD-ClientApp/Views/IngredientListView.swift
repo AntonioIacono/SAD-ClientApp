@@ -11,10 +11,10 @@ import SwiftUI
 struct IngredientListView: View {
     
     @StateObject var ingredientViewModel = IngredientListViewModel()
-    @State var modal: ModalType? = nil
+//    @State var modal: ModalType? = nil
     var drink: Drink
     var body: some View {
-        NavigationView {
+//        NavigationView {
             List {
                 ForEach(ingredientViewModel.ingredients) {
                     ingredient in
@@ -23,14 +23,14 @@ struct IngredientListView: View {
                             .font(.title3)
                             .foregroundColor(Color(.label))
                 }
-            }.navigationTitle(Text("Ingredients"))
-         
+//            }//.navigationTitle(Text("Ingredients"))
+            
             
         }.onAppear {
             Task {
                 do {
                     Endpoints.idDrinks = "\(String(describing: drink.id!))"
-                    try await ingredientViewModel.fetchIngredients(enpointIdDrink: "\(String(describing: drink.id!))")
+                    try await ingredientViewModel.fetchIngredients()
                 } catch {
                     print("Error: \(error)")
                 }

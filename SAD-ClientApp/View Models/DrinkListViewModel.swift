@@ -10,6 +10,16 @@ import SwiftUI
 
 class DrinkListViewModel: ObservableObject {
     @Published var drinks = [Drink]()
+    @Published var billCreated = Bool()
+    @Published var orderCreated = Bool()
+    
+   // @Published var shared = DrinkListViewModel()
+    
+    
+    func createOrder(){
+        self.orderCreated = true
+    }
+    
     
     func fetchDrinks() async throws {
         let urlString = Constants.baseURL + Endpoints.drinks

@@ -10,10 +10,10 @@ import SwiftUI
 
 struct DrinkDetailView: View {
     @StateObject var drinkListViewModel = DrinkListViewModel()
-    
+    @StateObject var orderViewModel = OrderViewModel()
     var drink : Drink
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .center){
             Text(drink.name)
                 .fontWeight(.semibold)
                 .lineLimit(2)
@@ -25,8 +25,10 @@ struct DrinkDetailView: View {
         }
         Spacer()
         Button {
-            order.drink.append(drink)
-            print("selected: (\(order)")
+            orderSend.drink.append(drink)
+//            orderViewModel.drinks.append(drink)
+//            orderViewModel.addDrink(drink: drink)
+            drinkListViewModel.createOrder()
         } label: {
             Text("Add to Order")
                 .font(.system(size: 30, weight: .heavy, design: .rounded))
@@ -36,6 +38,14 @@ struct DrinkDetailView: View {
                 .cornerRadius(20)
                 .frame(width: UIScreen.main.bounds.height * 0.3, height: UIScreen.main.bounds.height * 0.3 ,alignment: .center )
                 .scaledToFit()
+        }.onSubmit {
+            Task {
+                do {
+                    try await orderViewModel.addDrink(drink: drink)
+                } catch {
+                    print("Error: \(error)")
+                }
+            }
         }
             
         Spacer()

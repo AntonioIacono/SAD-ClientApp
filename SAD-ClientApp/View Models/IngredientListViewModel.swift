@@ -11,7 +11,7 @@ import SwiftUI
 class IngredientListViewModel: ObservableObject {
     @Published var ingredients = [Ingredient]()
     
-    func fetchIngredients(enpointIdDrink : String!) async throws {
+    func fetchIngredients() async throws {
         let urlString = Constants.baseURL + Endpoints.drinks + Endpoints.idDrinks + "/" + Endpoints.ingredients
         
         guard let url = URL(string: urlString) else {
