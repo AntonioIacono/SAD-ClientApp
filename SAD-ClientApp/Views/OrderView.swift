@@ -11,23 +11,23 @@ import SwiftUI
 struct OrderView: View {
     
     @StateObject var orderViewModel = OrderViewModel()
-    
     var body: some View {
         //        Text("Hello")
         NavigationView {
                         VStack{
                             List(orderSend.drink, id: \.id){ drink in
-            
+
                                 HStack{
                                     Text(drink.name)
                                         .font(.title3)
                                         .foregroundColor(Color(.label))
                                     Text("\(String(format: "%.2f", drink.price))  $")
                                 }.swipeActions(allowsFullSwipe: false) {
-            
+
                                     Button(role: .destructive) {
+//                                        orderSend.drink.removeAll(where: (orderSend.drink = drink) throws -> Bool)
+//                                        orderSend.drink.remove(at: orderSend.drink.)
                                         print("Deleting ")
-                                        
                                     } label: {
                                         Label("Delete", systemImage: "trash.fill")
                                     }
@@ -56,6 +56,8 @@ struct OrderView: View {
 //                }
                 
                 Button {
+                   
+                    
                 } label: {
                     Text("Confirm Order")
                         .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
@@ -81,6 +83,7 @@ struct OrderView: View {
 //        }
     }
 }
+
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {

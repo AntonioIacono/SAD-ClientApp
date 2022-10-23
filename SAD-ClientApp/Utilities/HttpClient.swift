@@ -41,18 +41,23 @@ class HttpClient {
         return object
     }
     
-    //POST
-    func sendData<T: Codable>(to url: URL, object: T, httpMethod: String) async throws {
+    //POST/PUT
+    func sendData<T: Codable>(to url: URL, object: T, httpMethod: String) async throws -> T {
         var request = URLRequest(url: url)
          request.httpMethod = httpMethod
          request.addValue(MIMEType.JSON.rawValue,forHTTPHeaderField: HttpHeaders.contentType.rawValue)
          request.httpBody = try? JSONEncoder().encode(object)
     
-         let (_, response) = try await URLSession.shared.data(for: request)
-         
-         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-             throw HttpError.badResponse
-         }
+         let (data, response) = try await URLSession.shared.data(for: request)
+       
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw HttpError.badResponse
+        }
+        
+        guard let responsObj = try? JSONDecoder().decode(T.self, from: data) else {
+            throw HttpError.errorDecodingData
+        }
+        return responsObj
      }
     
     //DELETE

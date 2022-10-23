@@ -8,7 +8,7 @@
 import Foundation
 
 enum Constants {
-    static let baseURL = "https://7cb2-213-45-187-159.eu.ngrok.io"+"/"
+    static let baseURL = "https://i-drink.herokuapp.com/"
 }
 
 enum Endpoints {
@@ -16,4 +16,5 @@ enum Endpoints {
     static let drinks = "drinks/"
     static var idDrinks = ""
     static let orders = "orders/"
+    static let bills = "bills/"
 }

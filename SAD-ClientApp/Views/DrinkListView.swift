@@ -21,6 +21,14 @@ struct DrinkListView: View {
                     if(!drinkListViewModel.billCreated){
                     Button {
                         drinkListViewModel.billCreated=true
+                        Task {
+                            do {
+                                try await drinkListViewModel.createBill()
+                            } catch {
+                                print("Error: \(error)")
+                            }
+                        }
+                        
                     } label: {
                         
                         Text("New Bill")
@@ -32,16 +40,16 @@ struct DrinkListView: View {
                             .scaledToFit()
                         }
                     }else{
-                        NavigationLink(destination: OrderView(),label:{
+                       
                             
-                                Text("Review Bill")
+                                Text("Bill Created")
                                     .font(.system(size: UIScreen.main.bounds.width*0.04, weight: .heavy, design: .rounded))
                                     .padding(.all)
                                     .foregroundColor(.white)
                                     .background(Color.red)
                                     .cornerRadius(0)
                                     .scaledToFit()
-                        })
+                       
                     }
                     
                     if(!(drinkListViewModel.orderCreated)){
@@ -75,7 +83,6 @@ struct DrinkListView: View {
                             Text(drink.name)
                                 .font(.title3)
                                 .foregroundColor(Color(.label))
-                            
                             Text("\(String(format: "%.2f", drink.price))  $")
                         }
                     })

@@ -15,3 +15,9 @@ struct Bill: Identifiable, Codable {
     var total : Double
 }
 
+struct BillToBeCreated:  Codable {
+    var table: Int
+    var state: String
+    var date : Date
+    var total : Double
+}

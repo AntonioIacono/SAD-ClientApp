@@ -22,6 +22,8 @@ class OrderViewModel: ObservableObject {
         }
     }
     
+    
+    
     func addDrink(drink:Drink){
         var tmp = orderSend.drink
         tmp.append(drink)
@@ -29,5 +31,10 @@ class OrderViewModel: ObservableObject {
         self.orderSend.drink = tmp
 //        }
     }
+    
+//    init() {}
+    
+    //func che spedisce l'ordine
+    //func confirmOrder()
     
 }
