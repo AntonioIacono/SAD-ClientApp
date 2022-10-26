@@ -15,6 +15,7 @@ struct DrinkListView: View {
 //    @State var orderCreated: Bool = false
     
     var body: some View {
+//        VStack{
         NavigationView {
             VStack{
                 HStack{
@@ -98,8 +99,8 @@ struct DrinkListView: View {
                     }
                 }
             }
-            
-        }
+        
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
